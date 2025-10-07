@@ -23,7 +23,7 @@ total = df_last_month.agg({'downloads': 'sum'})[0]
 print(total)
 
 
-url = f'https://img.shields.io/badge/pip_downloads-{total}_last_month-green?logo=python'
+url = f'https://img.shields.io/badge/Pip_Downloads-{total}_last_month-green?logo=python'
 
 response = requests.get(url)
 
