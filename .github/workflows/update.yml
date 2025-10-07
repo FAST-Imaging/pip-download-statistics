@@ -25,7 +25,7 @@ jobs:
           python3 plot_OS.py
           python3 plot_python_version.py
 
-    - name: Create badges
+      - name: Create badges
         run: |
           python3 create_badges.py
 
