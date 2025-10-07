@@ -31,4 +31,5 @@ jobs:
           git add data/last_updated
           git add plots/*.png
           git commit -m "Update"
-          git push origin main
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com:FAST-Imaging/pip-download-statistics.git
+          git push
