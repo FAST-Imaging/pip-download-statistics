@@ -16,7 +16,6 @@ def initialize(filename):
             since_date = file.readline().strip()
             # Add one day
             since_date = (datetime.strptime(since_date, date_format) + timedelta(days=1)).strftime(date_format)
-            # TODO Handle new year
 
     # Check if JSON file exists
     if os.path.exists(filename):
@@ -41,7 +40,7 @@ for entry in raw_data['data']:
 sorted_data = dict(sorted(data.items()))
 
 with open(f'data/{year}.json', 'w') as file:
-    json.dump(sorted_data, file)
+    json.dump(sorted_data, file, indent=4)
 
 
 # ==============> Per operating system
@@ -61,7 +60,7 @@ for OS in [('Darwin', 'macOS'), ('Windows', 'Windows'), ('Linux', 'Linux'), ('nu
     data[OS[1]] = dict(sorted(data[OS[1]].items()))
 
 with open(f'data/{year}_OS.json', 'w') as file:
-    json.dump(data, file)
+    json.dump(data, file, indent=4)
 
 
 # ==============> Per python version
@@ -99,7 +98,7 @@ for version in list(range(6, highest_minor_version))+['null',]:
     data[key] = dict(sorted(data[key].items()))
 
 with open(f'data/{year}_python_version.json', 'w') as file:
-    json.dump(data, file)
+    json.dump(data, file, indent=4)
 
 
 # =====================> Update last_updated file
