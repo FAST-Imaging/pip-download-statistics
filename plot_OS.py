@@ -38,5 +38,5 @@ for OS in all_data.keys():
 plt.title(f'Monthly downloads of pyfast pip package per operating system {year}')
 plt.legend()
 plt.tight_layout()
-fig.savefig(f'plots/{year}-OS.png')
+fig.savefig(f'plots/{year}-OS.svg')
 #plt.show()

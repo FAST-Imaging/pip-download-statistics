@@ -38,5 +38,5 @@ for version in all_data.keys():
 plt.title(f'Monthly downloads of pyfast pip package per python version {year}')
 plt.legend()
 plt.tight_layout()
-fig.savefig(f'plots/{year}-python-version.png')
+fig.savefig(f'plots/{year}-python-version.svg')
 #plt.show()

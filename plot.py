@@ -31,5 +31,5 @@ bars = ax.bar(monthly_data['month_name'], monthly_data['downloads'], color='skyb
 ax.bar_label(bars, label_type='edge', fmt='{:,.0f}') # Customize format as needed
 plt.title(f'Monthly downloads of pyfast pip package {year}')
 plt.tight_layout()
-fig.savefig(f'plots/{year}.png')
+fig.savefig(f'plots/{year}.svg')
 #plt.show()
