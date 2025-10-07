@@ -25,6 +25,8 @@ jobs:
 
       - name: Git commit and push
         run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
           git add data/*.json
           git add data/last_updated
           git add plots/*.png
