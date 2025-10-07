@@ -1,0 +1,32 @@
+name: Update download statistics
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install requirements
+        run: pip3 install -r requirements.txt
+
+      - name: Extract data
+        run: python3 extract.py
+
+      - name: Create plots
+        run: |
+          python3 plot.py
+          python3 plot_OS.py
+          python3 plot_python_version.py
+
+      - name: Git commit and push
+        run: |
+          git add data/*.json
+          git add data/last_updated
+          git add plots/*.png
+          git commit -m "Update"
+          git push origin main
