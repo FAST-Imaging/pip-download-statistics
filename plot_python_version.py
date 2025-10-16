@@ -22,7 +22,7 @@ for version in all_data.keys():
 
     # Fill missing days with 0
     df = df.set_index('date')
-    full_date_range = pd.date_range(start=pd.to_datetime('2025-01-01'), end=pd.Timestamp.now(), freq='D')
+    full_date_range = pd.date_range(start=pd.to_datetime(f'{year}-01-01'), end=pd.Timestamp.now(), freq='D')
     df = df.reindex(full_date_range, fill_value=0)
 
     df['month'] = df.index.to_period('M')
