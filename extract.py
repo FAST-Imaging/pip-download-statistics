@@ -82,7 +82,7 @@ for key in data.keys():
         minor_version = int(minor_version)
         if minor_version > highest_minor_version: highest_minor_version = minor_version
 
-for version in list(range(6, highest_minor_version))+['null',]:
+for version in list(range(6, highest_minor_version+1))+['null',]:
     if version == 'null':
         version_str = 'null'
     else:
